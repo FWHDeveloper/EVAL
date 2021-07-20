@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Student</title>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Add Student</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="/css/global.css">
+</head>
+<body>
+	<div class="container my-5">
+		<h1>Add a new Student</h1>
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-10">
+				<p class="aligncenter">
+							<img th:src="@{/img/addStudent.svg}"/>
+							</p>
+					<form class="form-style" action="#" th:action="@{/add}"
+						th:object="${student}" method="post">
+						<div class="row">
+							<div class="float-container">
+								<div class="float-child">
+									<label for="name" class="col-form-label">Name:</label> <input
+										type="text" th:field="*{name}" class="form-control" id="name"
+										placeholder="Name"> <span
+										th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+										class="text-danger"></span>
+								</div>
+								<div class="float-child">
+									<label for="studentId" class="col-form-label">StudentId:</label>
+									<input type="text" th:field="*{studentId}" class="form-control"
+										id="stduentId" placeholder="Student_Id"> <span
+										th:if="${#fields.hasErrors('studentId')}"
+										th:errors="*{studentId}" class="text-danger"></span>
+								</div>
+								<div class="float-child">
+									<label for="email" class="col-form-label">Email:</label>
+									<input type="text" th:field="*{email}" class="form-control"
+										id="email" placeholder="Email"> <span
+										th:if="${#fields.hasErrors('email')}"
+										th:errors="*{email}" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="float-container">
+								<div class="float-child">
+									<label for="math" class="col-form-label">Math:</label> <input
+										type="text" th:field="*{math}" class="form-control" id="eng"
+										placeholder="Math"> <span
+										th:if="${#fields.hasErrors('math')}" th:errors="*{math}"
+										class="text-danger"></span>
+								</div>
+								<div class="float-child">
+									<label for="math_coef" class="col-form-label">Coef:</label> <input
+										type="text" th:field="*{math_coef}" class="form-control"
+										id="eng" placeholder="Math_coefficient"> <span
+										th:if="${#fields.hasErrors('math_coef')}"
+										th:errors="*{math_coef}" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="float-container">
+								<div class="float-child">
+									<label for="algorithms" class="col-form-label">Algorithms:</label>
+									<input type="text" th:field="*{algorithms}"
+										class="form-control" id="eng" placeholder="Algorithms">
+									<span th:if="${#fields.hasErrors('algorithms')}"
+										th:errors="*{algorithms}" class="text-danger"></span>
+								</div>
+								<div class="float-child">
+									<label for="algo_coef" class="col-form-label">Coef:</label> <input
+										type="text" th:field="*{algo_coef}" class="form-control"
+										id="eng" placeholder="algo_coef"> <span
+										th:if="${#fields.hasErrors('algo_coef')}"
+										th:errors="*{algo_coef}" class="text-danger"></span>
+								</div>
+							</div>
+								<div class="float-container">
+								<div class="float-child">
+									<label for="sport" class="col-form-label">Sport:</label> <input
+										type="text" th:field="*{sport}" class="form-control"
+										id="sport" placeholder="Sport"> <span
+										th:if="${#fields.hasErrors('sport')}" th:errors="*{sport}"
+										class="text-danger"></span>
+								</div>
+								<div class="float-child">
+									<label for="spt_coef" class="col-form-label">Coef:</label> <input
+										type="text" th:field="*{spt_coef}" class="form-control"
+										id="spt_coef" placeholder="Sport_coefficient"> <span
+										th:if="${#fields.hasErrors('spt_coef')}"
+										th:errors="*{spt_coef}" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="float-container">
+								<div class="float-child">
+									<label for="english" class="col-form-label">English:</label> <input
+										type="text" th:field="*{english}" class="form-control"
+										id="eng" placeholder="English"> <span
+										th:if="${#fields.hasErrors('english')}" th:errors="*{english}"
+										class="text-danger"></span>
+								</div>
+								<div class="float-child">
+									<label for="eng_coef" class="col-form-label">Coef:</label> <input
+										type="text" th:field="*{eng_coef}" class="form-control"
+										id="eng_coef" placeholder="English_coefficient"> <span
+										th:if="${#fields.hasErrors('eng_coef')}"
+										th:errors="*{eng_coef}" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="float-container">
+								<div class="float-child">
+									<label for="German" class="col-form-label">German:</label> <input
+										type="text" th:field="*{german}" class="form-control"
+										id="german" placeholder="German"> <span
+										th:if="${#fields.hasErrors('german')}" th:errors="*{german}"
+										class="text-danger"></span>
+								</div>
+								<div class="float-child">
+									<label for="ger_coef" class="col-form-label">Coef:</label> <input
+										type="text" th:field="*{ger_coef}" class="form-control"
+										id="ger_coef" placeholder="ger_coef"> <span
+										th:if="${#fields.hasErrors('ger_coef')}"
+										th:errors="*{ger_coef}" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<input type="submit" class="btn btn-primary" value="Add Student">
+							</div>
+						</div>
+					</form>			
+				</div>
+			</div>
+		</div>
+		<a href="/view" th:href="@{/view}">Go back to Home page</a>
+</body>	
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>EVAL</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+<link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+<body class="welcome">
+<header class="navbar-fixed"> 
+    <nav class="row deep-purple darken-3">
+      <div class="col s12">
+        <ul class="right">
+          <li class="right">
+            <a th:href="@{/view}" target="_blank" class="fa fa-list" aria-hidden="true"><span class="icon-text"></span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <span id="splash-overlay" class="splash"></span>
+  <span id="welcome" class="z-depth-4"></span>
+  <main class="valign-wrapper">
+    <span class="container grey-text text-lighten-1 ">
+      <p class="flow-text">Welcome to</p>
+      <h1 class="title grey-text text-lighten-3">Eval</h1>
+      <blockquote class="flow-text">An App to evaluate students grades</blockquote>
+    </span>
+  </main>
+</body>
+</html>

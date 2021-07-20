@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>login</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="fonts/icomoon/style.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Style -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="img/undraw_remotely_2j6y.svg" alt="Image"
+						class="img-fluid">
+				</div>
+				<div class="col-md-6 contents">
+					<div class="row justify-content-center">
+						<div class="col-md-8">
+							<div class="mb-4">
+								<h3>Sign In</h3>
+
+							</div>
+							<form th:action="@{/login}" method="POST" class="form-signin">
+								<br /> 
+								   <div class="form-group first">
+								<input type="text" id="email" name="email"
+									th:placeholder="Email" class="form-control" /> 
+									</div>
+									<br />
+									   <div class="form-group first">
+									 <input
+									type="password" th:placeholder="Password" id="password"
+									name="password" class="form-control" /></div> <br />
+
+								<div align="center" th:if="${param.error}">
+									<p style="font-size: 20; color: #FF1C19;">Email or Password
+										invalid, please verify</p>
+								</div>
+								<button class="btn btn-lg btn-primary btn-block" name="Submit"
+									value="Login" type="Submit" th:text="Login"></button>
+							</form>
+							<br>
+							<div align="center">
+								<form th:action="@{/registration}" method="get">
+									<button class="btn btn-md btn-warning btn-block" type="Submit">Go
+										To Registration Page</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

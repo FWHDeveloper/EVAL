@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Gestion des notes scolaires</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+	   <link rel="stylesheet" href="/css/global.css">
+</head>
+<body>
+ <div class="container my-2">
+	 <img th:src="@{/img/eval.png}" class="custom">
+	   <p class="my-5">
+                      <a th:href="@{'/add'}" class="btn btn-primary">
+                      <i class="fas fa-user-plus ml-2"> Add Student</i></a>
+                    
+                    
+                      <a th:href="@{'/mail/send'}" class=" btn btn-warning">
+                      <i class="fas fa-envelope-square "></i> Send  notification Email</i></a>
+                    </p>
+	<table class="table table-striped table-responsive-md">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>StudentId</th>
+			<th>Email</th>
+			<th>Math</th>
+			<th>Coef</th>
+			<th>Algorithms</th>
+			<th>Coef</th>
+			<th>Sport</th>
+			<th>Coef</th>
+			<th>English</th>
+			<th>Coef</th>
+			<th>German</th>
+			<th>Coef</th>
+			<th>Average Grade</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each=" student : ${students}">
+			<td th:text="${student.name}"></td>
+			<td th:text="${student.studentId}"></td>
+			<td th:text="${student.email}"></td>
+			<td th:text="${student.math}"></td>
+			<td th:text="${student.math_coef}"></td>
+			<td th:text="${student.algorithms}"></td>
+			<td th:text="${student.algo_coef}"></td>
+			<td th:text="${student.sport}"></td>
+			<td th:text="${student.spt_coef}"></td>
+			<td th:text="${student.english}"></td>
+			<td th:text="${student.eng_coef}"></td>
+			<td th:text="${student.german}"></td>
+			<td th:text="${student.ger_coef}"></td>
+			<td th:text="${student.averageGrade}"></td>
+			<td><a style="margin-left: 0px" href=""
+				th:href="@{/update/{id}(id=${student.id})}" class="btn btn-success"><i class="fas fa-user-edit ml-2"></i></a></td>
+			<td><a style="margin-left: 0px" href=""
+				th:href="@{/delete/{id}(id=${student.id})}" class="btn btn-danger"><i class="fas fa-user-times ml-2"></i></a></td>
+		</tr>
+		</tbody>
+	</table>
+	<br>
+	<br>
+		</div>
+</body>
+</html>

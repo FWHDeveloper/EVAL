@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Gestion des notes scolaires</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+	   <link rel="stylesheet" href="/css/global.css">
+<meta charset="ISO-8859-1">
+<title>View Grade</title>
+</head>
+<body>
+<div class="container my-2">
+<h1>View your grade</h1>
+<div>
+<div>
+	 <img id="leftbox" th:src="@{/img/student.svg}">
+</div>
+<div>
+<table class="table-style" style="width:40%; float:right; margin-top:90px; margin-right:150px;" th:object="${student}">
+<tr>
+<th>Name</th>
+<td th:text="*{name}"></td>
+</tr>
+<tr>
+<th>StudentId</th>
+<td th:text="*{studentId}"></td>
+</tr>
+<tr>
+<th>Email</th>
+<td th:text="*{email}"></td>
+</tr>
+<tr>
+<th>Math</th>
+<td th:text="*{math}"></td>
+</tr>
+<tr>
+<th>Sport</th>
+<td th:text="*{sport}"></td>
+</tr>
+<tr>
+<th>English</th>
+<td th:text="*{english}"></td>
+</tr>
+<tr>
+<th>German</th>
+<td th:text="*{german}"></td>
+</tr>
+<tr>
+<th>Average Grade</th>
+<td th:text="*{averageGrade}"></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
